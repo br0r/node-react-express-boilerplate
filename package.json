@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "serve": "NODE_ENV=production node dist/server.js",
+    "build": "npm run build-web && npm run build-server",
+    "build-server": "./node_modules/babel-cli/bin/babel.js src -d dist --ignore main.js",
+    "build-web": "./node_modules/browserify/bin/cmd.js -t [ babelify --presets [ es2015 ] ] --debug ./src/main.js > ./public/bundle.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "nodemon": "^1.11.0"
+  }
+}

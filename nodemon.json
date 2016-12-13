@@ -1,0 +1,15 @@
+{
+  "ignore": [
+    "bundle.js",
+    "node_modules/**/node_modules",
+    "*.swp"
+  ],
+  "watch": [
+    "src/"
+  ],
+  "ext": "js json",
+  "events": {
+    "start": "npm run build-web",
+    "restart": "npm run build-web"
+  }
+}
