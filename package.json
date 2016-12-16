@@ -5,7 +5,7 @@
     "serve": "NODE_ENV=production node dist/server.js",
     "build": "npm run build-web && npm run build-server",
     "build-server": "./node_modules/babel-cli/bin/babel.js src -d dist --ignore main.js",
-    "build-web": "./node_modules/browserify/bin/cmd.js -t [ babelify --presets [ es2015 ] ] --debug ./src/main.js > ./public/bundle.js"
+    "build-web": "mkdir -p public && ./node_modules/browserify/bin/cmd.js -t [ babelify --presets [ es2015 ] ] --debug ./src/main.js > ./public/bundle.js"
   },
   "dependencies": {
     "express": "^4.14.0",
